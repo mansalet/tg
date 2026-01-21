@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Оплата заказа - FashionStore</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#2575fc">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">👕 FashionStore</a>
+
+            <nav class="nav desktop-only">
+                <ul class="nav-list">
+                    <li><a href="index.html">🏠 Главная</a></li>
+                    <li><a href="index.html#catalog">🛍️ Каталог</a></li>
+                    <li><a href="payment.html" class="active">💳 Оплата</a></li>
+                    <li><a href="index.html#contact">📞 Контакты</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Закрыть меню">✕</button>
+        <ul>
+            <li><a href="index.html">🏠 Главная</a></li>
+            <li><a href="index.html#catalog">🛍️ Каталог</a></li>
+            <li><a href="payment.html" class="active">💳 Оплата</a></li>
+            <li><a href="index.html#contact">📞 Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="content">
+        <div class="container">
+            <h1 class="fade-in" style="text-align: center; margin: 20px 0;">Оформление заказа</h1>
+            
+            <div class="checkout-container">
+                <!-- Левая колонка - Форма оплаты -->
+                <div class="checkout-form-container">
+                    <div class="payment-form fade-in">
+                        <h2>💳 Данные для оплаты</h2>
+                        
+                        <div class="form-group">
+                            <label for="cardNumber">Номер карты *</label>
+                            <input type="text" 
+                                   id="cardNumber" 
+                                   placeholder="1234 5678 9012 3456" 
+                                   inputmode="numeric"
+                                   pattern="[0-9\s]{13,19}"
+                                   maxlength="19"
+                                   required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardExpiry">Срок действия *</label>
+                                <input type="text" 
+                                       id="cardExpiry" 
+                                       placeholder="ММ/ГГ"
+                                       inputmode="numeric"
+                                       pattern="(0[1-9]|1[0-2])\/([0-9]{2})"
+                                       maxlength="5"
+                                       required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cardCvv">CVV *</label>
+                                <input type="text" 
+                                       id="cardCvv" 
+                                       placeholder="123"
+                                       inputmode="numeric"
+                                       pattern="[0-9]{3}"
+                                       maxlength="3"
+                                       required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Имя на карте *</label>
+                            <input type="text" 
+                                   id="cardName" 
+                                   placeholder="IVAN IVANOV"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email для чека *</label>
+                            <input type="email" 
+                                   id="email" 
+                                   placeholder="ivanov@example.com"
+                                   inputmode="email"
+                                   required>
+                        </div>
+                        
+                        <button class="btn" id="payButton" style="width: 100%; margin-top: 20px;">
+                            💳 Оплатить заказ
+                        </button>
+                    </div>
+                    
+                    <!-- Методы оплаты -->
+                    <div class="payment-methods fade-in">
+                        <h3>Доступные методы оплаты:</h3>
+                        <div class="payment-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="payment-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Mir-logo.SVG.svg" alt="Мир" class="payment-icon">
+                            <div class="payment-icon-text">💵</div>
+                            <div class="payment-icon-text">📱</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка - Сводка заказа -->
+                <div class="order-summary-container">
+                    <div class="order-summary fade-in">
+                        <h2>Ваш заказ</h2>
+                        
+                        <!-- Изображения товаров в заказе -->
+                        <div class="order-items">
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                                     alt="Джинсы" 
+                                     class="order-item-image">
+                                <div class="order-item-info">
+                                    <h4>Джинсы классические</h4>
+                                    <p>2 499 ₽ × 1</p>
+                                </div>
+                                <span class="order-item-price">2 499 ₽</span>
+                            </div>
+                            
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                                     alt="Футболка" 
+                                     class="order-item-image">
+                                <div class="order-item-info">
+                                    <h4>Футболка с принтом</h4>
+                                    <p>999 ₽ × 2</p>
+                                </div>
+                                <span class="order-item-price">1 998 ₽</span>
+                            </div>
+                            
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                                     alt="Куртка" 
+                                     class="order-item-image">
+                                <div class="order-item-info">
+                                    <h4>Куртка джинсовая</h4>
+                                    <p>3 999 ₽ × 1</p>
+                                </div>
+                                <span class="order-item-price">3 999 ₽</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Итоговая сумма -->
+                        <div class="order-total">
+                            <div class="total-row">
+                                <span>Товары (4 шт.)</span>
+                                <span>8 496 ₽</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Доставка</span>
+                                <span>Бесплатно</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Скидка</span>
+                                <span style="color: #28a745;">-500 ₽</span>
+                            </div>
+                            <div class="total-row final">
+                                <strong>Итого к оплате</strong>
+                                <strong style="color: #6a11cb; font-size: 24px;">7 996 ₽</strong>
+                            </div>
+                        </div>
+                        
+                        <!-- Кнопка возврата -->
+                        <div style="text-align: center; margin-top: 25px;">
+                            <a href="index.html" class="btn secondary" style="display: inline-block;">
+                                ← Вернуться в магазин
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Гарантии безопасности -->
+                    <div class="security-info fade-in">
+                        <div class="security-item">
+                            <span class="security-icon">🔒</span>
+                            <div>
+                                <h4>Безопасная оплата</h4>
+                                <p>SSL-шифрование данных</p>
+                            </div>
+                        </div>
+                        <div class="security-item">
+                            <span class="security-icon">🛡️</span>
+                            <div>
+                                <h4>Гарантия возврата</h4>
+                                <p>14 дней на возврат</p>
+                            </div>
+                        </div>
+                        <div class="security-item">
+                            <span class="security-icon">📞</span>
+                            <div>
+                                <h4>Поддержка 24/7</h4>
+                                <p>Всегда на связи</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>© 2024 FashionStore. Все права защищены.</p>
+            <p><a href="index.html">Вернуться на главную</a> | <a href="index.html#catalog">Продолжить покупки</a></p>
+        </div>
+    </footer>
+
+    <!-- Индикатор загрузки -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Обработка платежа...</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Стили для страницы оплаты -->
+    <style>
+        /* Контейнер для двухколоночного макета */
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        /* Форма оплаты */
+        .payment-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .payment-form {
+                padding: 25px;
+            }
+        }
+        
+        /* Методы оплаты */
+        .payment-methods {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .payment-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icon {
+            height: 40px;
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .payment-icon:hover {
+            opacity: 1;
+        }
+        
+        .payment-icon-text {
+            font-size: 32px;
+            opacity: 0.7;
+        }
+        
+        /* Сводка заказа */
+        .order-summary {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .order-items {
+            margin: 25px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .order-item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .order-item-info {
+            flex: 1;
+        }
+        
+        .order-item-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+        
+        .order-item-info p {
+            margin: 0;
+            font-size: 13px;
+            color: #6c757d;
+        }
+        
+        .order-item-price {
+            font-weight: bold;
+            color: #6a11cb;
+        }
+        
+        /* Итоговая сумма */
+        .order-total {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            color: #6c757d;
+        }
+        
+        .total-row.final {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+        
+        /* Информация о безопасности */
+        .security-info {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .security-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .security-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .security-icon {
+            font-size: 24px;
+            color: #2575fc;
+        }
+        
+        .security-item h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+        
+        .security-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .checkout-container {
+                gap: 20px;
+            }
+            
+            .payment-form,
+            .payment-methods,
+            .order-summary,
+            .security-info {
+                padding: 20px;
+            }
+            
+            .order-item {
+                padding: 12px 0;
+            }
+            
+            .order-item-image {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .payment-form,
+            .payment-methods,
+            .order-summary,
+            .security-info {
+                padding: 15px;
+            }
+            
+            .form-row {
+                gap: 10px;
+            }
+            
+            .order-item {
+                gap: 10px;
+            }
+            
+            .order-item-image {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* Анимация для кнопки оплаты */
+        #payButton {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #payButton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(106, 17, 203, 0.3);
+        }
+        
+        #payButton:active {
+            transform: translateY(-1px);
+        }
+        
+        #payButton::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        #payButton:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            20% {
+                transform: scale(25, 25);
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(40, 40);
+            }
+        }
+    </style>
+    
+    <!-- Скрипт для страницы оплаты -->
+    <script>
+        // Специфичный скрипт для страницы оплаты
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("💳 Страница оплаты загружена");
+            
+            // Форматирование номера карты
+            const cardNumberInput = document.getElementById('cardNumber');
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+                    e.target.value = value.substring(0, 19);
+                });
+            }
+            
+            // Форматирование срока действия
+            const cardExpiryInput = document.getElementById('cardExpiry');
+            if (cardExpiryInput) {
+                cardExpiryInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length >= 2) {
+                        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                    }
+                    e.target.value = value.substring(0, 5);
+                });
+            }
+            
+            // Ограничение CVV
+            const cardCvvInput = document.getElementById('cardCvv');
+            if (cardCvvInput) {
+                cardCvvInput.addEventListener('input', function(e) {
+                    this.value = this.value.replace(/\D/g, '').substring(0, 3);
+                });
+            }
+            
+            // Кнопка оплаты
+            const payButton = document.getElementById('payButton');
+            if (payButton) {
+                payButton.addEventListener('click', processPayment);
+                
+                // Для сенсорных устройств
+                if ('ontouchstart' in window) {
+                    payButton.addEventListener('touchstart', function() {
+                        this.style.transform = 'translateY(-1px)';
+                    });
+                    
+                    payButton.addEventListener('touchend', function() {
+                        this.style.transform = '';
+                    });
+                }
+            }
+            
+            // Проверка формы при потере фокуса
+            const inputs = document.querySelectorAll('input[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+        });
+        
+        // Валидация поля
+        function validateField(field) {
+            if (!field.value.trim()) {
+                field.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            // Проверка специфичных полей
+            if (field.id === 'cardNumber' && field.value.replace(/\s/g, '').length < 16) {
+                field.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            if (field.id === 'cardExpiry' && !field.value.match(/^(0[1-9]|1[0-2])\/([0-9]{2})$/)) {
+                field.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            if (field.id === 'cardCvv' && field.value.length !== 3) {
+                field.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            if (field.type === 'email' && !field.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                field.style.borderColor = '#dc3545';
+                return false;
+            }
+            
+            field.style.borderColor = '#28a745';
+            return true;
+        }
+        
+        // Обработка платежа
+        function processPayment() {
+            // Проверка всех полей
+            const inputs = document.querySelectorAll('input[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                showPaymentMessage('⚠️ Пожалуйста, заполните все поля корректно!', 'error');
+                return;
+            }
+            
+            // Показываем индикатор загрузки
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.classList.add('active');
+            }
+            
+            // Блокируем кнопку
+            const payButton = document.getElementById('payButton');
+            if (payButton) {
+                payButton.disabled = true;
+                payButton.textContent = 'Обработка...';
+            }
+            
+            // Имитация обработки платежа
+            setTimeout(() => {
+                // Скрываем индикатор загрузки
+                if (loading) {
+                    loading.classList.remove('active');
+                }
+                
+                // Восстанавливаем кнопку
+                if (payButton) {
+                    payButton.disabled = false;
+                    payButton.textContent = '💳 Оплатить заказ';
+                }
+                
+                // Показываем успех
+                showPaymentMessage('✅ Оплата прошла успешно! Спасибо за покупку!', 'success');
+                
+                // Через 3 секунды возвращаем на главную
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            }, 2000);
+        }
+        
+        // Показ сообщения об оплате
+        function showPaymentMessage(message, type) {
+            // Создаем сообщение
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `payment-message ${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 30px 40px;
+                background: white;
+                color: ${type === 'success' ? '#28a745' : '#dc3545'};
+                border-radius: 15px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+                z-index: 10000;
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                animation: popIn 0.5s ease;
+                border: 3px solid ${type === 'success' ? '#28a745' : '#dc3545'};
+                max-width: 90%;
+            `;
+            
+            document.body.appendChild(messageDiv);
+            
+            // Удаляем через 2.5 секунды
+            setTimeout(() => {
+                messageDiv.style.animation = 'popOut 0.5s ease forwards';
+                setTimeout(() => {
+                    if (messageDiv.parentNode) {
+                        messageDiv.remove();
+                    }
+                }, 500);
+            }, 2500);
+            
+            // Добавляем анимации
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes popIn {
+                    from {
+                        opacity: 0;
+                        transform: translate(-50%, -50%) scale(0.5);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                }
+                
+                @keyframes popOut {
+                    from {
+                        opacity: 1;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                    to {
+                        opacity: 0;
+                        transform: translate(-50%, -50%) scale(0.5);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // На мобильных устройствах фокусируем первое поле
+        if (window.innerWidth <= 768) {
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    const firstInput = document.querySelector('input');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 500);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>FashionStore - Модная одежда</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#6a11cb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">👕 FashionStore</a>
+
+            <!-- Навигация для десктопа -->
+            <nav class="nav desktop-only">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">🏠 Главная</a></li>
+                    <li><a href="#catalog">🛍️ Каталог</a></li>
+                    <li><a href="payment.html">💳 Оплата</a></li>
+                    <li><a href="#contact">📞 Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Кнопка корзины -->
+            <button class="cart-btn" id="cartBtn">
+                <span class="desktop-only">Корзина</span> 🛒
+                <span class="cart-count">0</span>
+            </button>
+
+            <!-- Кнопка мобильного меню -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Закрыть меню">✕</button>
+        <ul>
+            <li><a href="index.html" class="active">🏠 Главная</a></li>
+            <li><a href="#catalog">🛍️ Каталог</a></li>
+            <li><a href="payment.html">💳 Оплата</a></li>
+            <li><a href="#contact">📞 Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="content">
+        <!-- Герой-секция -->
+        <section class="hero fade-in">
+            <div class="container">
+                <h1>Модная одежда для каждого</h1>
+                <p>Стиль, качество и доступные цены в одном месте</p>
+                <div class="btn-group">
+                    <a href="payment.html" class="btn">💳 Перейти к оплате</a>
+                    <a href="#catalog" class="btn secondary">🛍️ Смотреть каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог -->
+        <section class="catalog" id="catalog">
+            <div class="container">
+                <h2 class="fade-in">Популярные товары</h2>
+                <div class="products">
+                    <!-- Товар 1 - Мужская футболка -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" 
+                             alt="Мужская футболка с принтом" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Футболка мужская с принтом</h3>
+                        <p class="price">999 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 2 - Джинсы -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amVhbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Джинсы классические синие" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Джинсы классические</h3>
+                        <p class="price">2 499 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 3 - Платье -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Летнее платье голубое" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Платье летнее голубое</h3>
+                        <p class="price">1 799 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 4 - Куртка -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" 
+                             alt="Куртка джинсовая" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Куртка джинсовая</h3>
+                        <p class="price">3 999 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 5 - Спортивный костюм -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Спортивный костюм черный" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Спортивный костюм</h3>
+                        <p class="price">3 499 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 6 - Рубашка -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Рубашка белая офисная" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Рубашка офисная</h3>
+                        <p class="price">1 599 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 7 - Юбка -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Юбка черная миди" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Юбка черная миди</h3>
+                        <p class="price">2 199 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                    
+                    <!-- Товар 8 - Аксессуары -->
+                    <div class="product fade-in">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFnfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" 
+                             alt="Сумка кожаная женская" 
+                             loading="lazy"
+                             class="product-image">
+                        <h3>Сумка кожаная</h3>
+                        <p class="price">4 299 ₽</p>
+                        <button class="btn small add-to-cart">🛒 В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- О нас -->
+        <section class="about fade-in">
+            <div class="container">
+                <h2>Почему выбирают нас?</h2>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Бесплатная доставка</h3>
+                        <p>При заказе от 3000 ₽</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💯</div>
+                        <h3>Гарантия качества</h3>
+                        <p>Возврат в течение 14 дней</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Для всей семьи</h3>
+                        <p>Одежда для мужчин, женщин и детей</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="fade-in">Контакты</h2>
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p>+7 (999) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@fashionstore.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <h3>Время работы</h3>
+                            <p>Пн-Пт: 9:00 - 21:00</p>
+                            <p>Сб-Вс: 10:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>© 2024 FashionStore. Все права защищены.</p>
+            <p><a href="payment.html">Страница оплаты</a> | <a href="index.html">Главная</a> | <a href="#catalog">Каталог</a></p>
+            <p class="mobile-only" style="margin-top: 10px; font-size: 12px;">
+                Оптимизировано для мобильных устройств
+            </p>
+        </div>
+    </footer>
+
+    <!-- Индикатор загрузки -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Загрузка...</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Инлайн стили для быстрой загрузки -->
+    <style>
+        /* Критический CSS для быстрого отображения */
+        .header, .hero, .products, .about, .contact, footer {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .hero { animation-delay: 0.1s; }
+        .catalog h2 { animation-delay: 0.2s; }
+        .product:nth-child(1) { animation-delay: 0.3s; }
+        .product:nth-child(2) { animation-delay: 0.4s; }
+        .product:nth-child(3) { animation-delay: 0.5s; }
+        .product:nth-child(4) { animation-delay: 0.6s; }
+        .product:nth-child(5) { animation-delay: 0.7s; }
+        .product:nth-child(6) { animation-delay: 0.8s; }
+        .product:nth-child(7) { animation-delay: 0.9s; }
+        .product:nth-child(8) { animation-delay: 1.0s; }
+        .about { animation-delay: 1.1s; }
+        .contact { animation-delay: 1.2s; }
+        
+        /* Новые стили для дополнительных секций */
+        .about {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin: 40px 0;
+        }
+        
+        .about h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: clamp(24px, 4vw, 36px);
+            color: #2c3e50;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .feature p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .contact-item p {
+            color: #6c757d;
+            margin: 5px 0;
+        }
+        
+        /* Адаптивность для новых секций */
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature {
+                padding: 20px 15px;
+            }
+            
+            .contact-item {
+                padding: 20px;
+            }
+        }
+        
+        /* Улучшенный скроллбар для мобильных */
+        @media (max-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: #6a11cb;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</body>
+</html>
